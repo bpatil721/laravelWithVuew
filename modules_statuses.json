@@ -1,0 +1,9 @@
+{
+    "Post": true,
+    "Module": true,
+    "Model": true,
+    "Frontend": true,
+    "Category": true,
+    "Product": true,
+    "Banner": true
+}
