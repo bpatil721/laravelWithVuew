@@ -12,6 +12,7 @@ use Modules\Product\Http\Controllers\ProductController;
 
 
 Route::get('/posts', [PostController::class, 'postIndex'])->name('posts.index');
+Route::get('/posts-demo', [PostController::class, 'postIndexDemo'])->name('posts.index');
 Route::get('user/dashboard', [DashboardController::class, 'dashboard'])->name('user.dashboard');
 Route::get('/get-collection', [BannerController::class, 'getCollection']);
 Route::get('product/{id}', [ProductController::class,'show']);
