@@ -24,5 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::put('user/profile/password', [ProfileController::class, 'updatePassword'])->name('user.profile.password');
     route::post('user/change-password',[ProfileController::class,'changePassword'])->name('user.change-password');
 });
-
+Route::get('/', function () {
+    return "Main branch change";
+});
 require __DIR__.'/auth.php';
