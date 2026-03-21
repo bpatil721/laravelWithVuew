@@ -26,6 +26,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/test', function () {
-    return "Feature 1";.return view('welcome');
+    return view('welcome');
 });
 require __DIR__.'/auth.php';
