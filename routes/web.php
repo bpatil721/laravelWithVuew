@@ -25,7 +25,5 @@ Route::middleware('auth')->group(function () {
     route::post('user/change-password',[ProfileController::class,'changePassword'])->name('user.change-password');
 });
 
-Route::get('/testtest', function (xcxc) {
-    creturn view('welcome');sdfsdf
-});
+
 require __DIR__.'/auth.php';
