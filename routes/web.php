@@ -26,6 +26,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/test', function () {
-    creturn view('welcome');sdfsdf
+    creturn view('welcome');
 });
 require __DIR__.'/auth.php';
