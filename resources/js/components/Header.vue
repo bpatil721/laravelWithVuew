@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+<template>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <defs>
       <symbol xmlns="http://www.w3.org/2000/svg" id="instagram" viewBox="0 0 15 15">
         <path fill="none" stroke="currentColor"
@@ -210,3 +211,86 @@
     </div>
   </div>
 
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/shop">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/checkout">Checkout</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    <li v-if="login" class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center"
+                           href="#"
+                           id="userDropdown"
+                           role="button"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            <img :src="user.imageSrc"
+                                 :alt="user.name"
+                                 class="rounded-circle me-2"
+                                 width="32"
+                                 height="32"
+                                 style="object-fit:cover;background-color:#e0e0e0;">
+                            <span class="ms-2">{{ user.name }}</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark"
+                            aria-labelledby="userDropdown">
+                            <li>
+                                <a class="dropdown-item" href="/">Home</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/profile">Profile</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <button class="dropdown-item text-danger" type="button" @click="logout">
+                                    Logout
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li v-else>
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</template>
+
+<script>
+import axios from 'axios';
+
+export default {
+    props: {
+        user:  { type: Object, default: null },
+        login: { type: Boolean, default: false }
+    },
+    methods: {
+        async logout() {
+            await axios.post('/logout');
+            window.location.href = '/login';
+        }
+    }
+}
+</script>

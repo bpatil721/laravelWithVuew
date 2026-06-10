@@ -15,6 +15,11 @@ class Cart extends Model
      */
     protected $fillable = ['product_id', 'user_id', 'amount', 'quantity'];
 
+    public function product()
+    {
+        return $this->belongsTo(\Modules\Product\Models\Product::class);
+    }
+
     // protected static function newFactory(): CartFactory
     // {
     //     // return CartFactory::new();

@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::put('user/profile', [ProfileController::class, 'update'])->name('user.profile.update');
     Route::put('user/profile/password', [ProfileController::class, 'updatePassword'])->name('user.profile.password');
     route::post('user/change-password',[ProfileController::class,'changePassword'])->name('user.change-password');
+   
 });
 
 Route::get('/test', function () {

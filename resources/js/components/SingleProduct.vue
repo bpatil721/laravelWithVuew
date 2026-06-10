@@ -94,7 +94,7 @@ export default {
        addToCart()
        {
             const cartStore = useCartStore();
-            cartStore.addToCart({product: this.product, qty:this.qty});
+            cartStore.addToCart({product: this.product, qty:this.qty, amount : this.product.price});
        }
     },
     props: {

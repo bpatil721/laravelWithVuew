@@ -27,7 +27,7 @@ class LoginController extends Controller
             
             return response()->json([
                 'status'=>true,
-                'message'=>'Login successful1',
+                'message'=>'Login successful',
                 'remember_set' => $remember
             ]);
         }

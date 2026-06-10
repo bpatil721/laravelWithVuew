@@ -9,10 +9,15 @@ import Profile from './components/Profile.vue';
 import ChangePassword from './components/ChangePassword.vue';
 import NewCollection from './components/NewCollection.vue';
 import SingleProduct from './components/SingleProduct.vue';
+import Checkout from './components/Checkout.vue';
+import Header from './components/Header.vue';
+import HomePage from './components/HomePage.vue';
+
+
 
 
 export default {
-    components: {Posts, LoginForm, Profile,ChangePassword,NewCollection,SingleProduct},
+    components: {Posts, LoginForm, Profile,ChangePassword,NewCollection,SingleProduct,Checkout,Header,HomePage},
     data() {
         return {
             componentName: null,

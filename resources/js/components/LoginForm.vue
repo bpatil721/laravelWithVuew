@@ -58,15 +58,16 @@ export default {
                 password: this.password,
                 remember: this.remember
             });
+            console.log("response=>".response);
             const toast = this.getToast();
             if (toast) {
                 toast.success(response.data.message);
             } else {
                 // Fallback if toast is not available
-                alert(response.data.message);
+                // alert(response.data.message);
             }
             if(response.data.status){
-                window.location.href = '/user/dashboard';
+                window.location.href = '/';
             }
             } catch (error) {
                 console.log(error);
